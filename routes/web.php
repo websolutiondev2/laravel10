@@ -17,9 +17,12 @@ use App\Http\Controllers\Auth;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route ::view('/test','test');
 Route::get('/users',[Auth::class,'index'])->middleware('Abc');
 
 Route::view('/user','found')->middleware('Abc');
 // Route::view('/user','found');
 Route :: view('/notfound','notfound');
+
+Route::get('/nesting-view',[Auth::class,'nesting_view']);
+Route::get('/exit-view',[Auth::class,'viewexist']);

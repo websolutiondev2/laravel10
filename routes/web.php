@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/user',[Auth::class,'index'])->middleware('Check');
+Route::get('/users',[Auth::class,'index'])->middleware('Abc');
 
-Route::view('/user','found')->middleware('User');
-Route::view('/user','found');
+Route::view('/user','found')->middleware('Abc');
+// Route::view('/user','found');
+Route :: view('/notfound','notfound');

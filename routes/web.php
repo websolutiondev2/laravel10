@@ -19,4 +19,5 @@ Route::get('/', function () {
 
 // Route::get('/user',[Auth::class,'index'])->middleware('Check');
 
-Route::View('/user','found')->middleware('User');
+Route::view('/user','found')->middleware('User');
+Route::view('/user','found');

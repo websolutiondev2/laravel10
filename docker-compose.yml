@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  laravel10:
+    image: laravel10
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+ working_dir: /xampp4/htdocs
+ 

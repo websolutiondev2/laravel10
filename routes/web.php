@@ -26,3 +26,8 @@ Route :: view('/notfound','notfound');
 
 Route::get('/nesting-view',[Auth::class,'nesting_view']);
 Route::get('/exit-view',[Auth::class,'viewexist']);
+
+//Passing Data
+Route::get('/name_array',[Auth::class,'nameArray']);
+Route::get('/compact_function',[Auth::class,'compactFunction']);
+Route::get('/with_function',[Auth::class,'withfunction']);

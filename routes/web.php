@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth;
 
+use App\Http\Controllers\LoopsController;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,4 +33,18 @@ Route::get('/exit-view',[Auth::class,'viewexist']);
 //Passing Data
 Route::get('/name_array',[Auth::class,'nameArray']);
 Route::get('/compact_function',[Auth::class,'compactFunction']);
-Route::get('/with_function',[Auth::class,'withfunction']);
+Route::get('/with_function/{id}',[Auth::class,'withfunction']);
+
+
+//Looping Controller Routes
+Route::get('/loopdemo',[LoopsController::class,'loop_demo']);
+
+Route::get('/demo', function () {
+    return view('demo');
+    });
+
+// Component
+Route ::get('/alert_component',[LoopsController::class,'alertController']);
+
+//Helper
+Route ::get('/array-helper',[UserController::class,'arrayHelpers']);

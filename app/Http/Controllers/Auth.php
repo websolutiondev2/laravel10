@@ -46,9 +46,15 @@ class Auth extends Controller
 
     public function compactFunction()
     {
-          if(View::exists('passing_data.viewexists'))
+        $fav_color =[
+            'red',
+            'balck',
+            'blue',
+            'red'
+        ];
+          if(View::exists('passing_data.compact_function'))
         {
-            return view('passing_data.viewexists');
+            return view('passing_data.compact_function',compact('fav_color'));
         }
         
         else{
@@ -56,11 +62,11 @@ class Auth extends Controller
         }
     }
 
-    public function withfunction()
+    public function withfunction($id)
     {
-          if(View::exists('passing_data.viewexists'))
+          if(View::exists('passing_data.with_function'))
         {
-            return view('passing_data.viewexists');
+            return view('passing_data.with_function')->with('id',$id);
         }
         
         else{

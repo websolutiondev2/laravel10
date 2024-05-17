@@ -22,14 +22,24 @@ class UserController extends Controller
             'Angular JS'
         ];
 
+        $s_arr=[
+            'S90',
+            'BMW',
+            'SCODA',
+            'BUGATI'
+        ];
+
         $str = "Welcome to LearnVern.";
         $bjt = new \stdClass();
         $collection =   new  Collection;
         $accessible = Arr::accessible($arr);
         $arr_add = Arr::add($arr,'6','Codigniter');
+        $as = Arr::collapse([$s_arr,$arr]);
+        $arr_cross = Arr::crossJoin($arr,$s_arr);
+
         echo "<pre>";
         // var_dump($accessible);
-        print_r($arr_add);
+        print_r($arr_cross);
         exit;
     }
 }

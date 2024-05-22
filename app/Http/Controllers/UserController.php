@@ -68,11 +68,9 @@ class UserController extends Controller
         echo $str;
     }
 
-     function urlhelpers()
+    function urlHelpers()
     {
-
-        $action = action([UserController::class,'fluentStringHelpers']);
-        print_r($action);
-
+        $action = action(UserController::class. '@fluentStringHelpers');
+        return $action;
     }
 }

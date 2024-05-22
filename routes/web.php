@@ -52,3 +52,4 @@ Route ::get('/array-helper',[UserController::class,'arrayHelpers']);
 //String Helper
 Route ::get('/string-helper',[UserController::class,'stringHelpers']);
 Route ::get('/string-fluent',[UserController::class,'fluentStringHelpers']);
+Route ::get('/url-helper',[UserController::class,'urlHelpers']);

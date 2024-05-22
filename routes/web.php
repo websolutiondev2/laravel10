@@ -48,3 +48,7 @@ Route ::get('/alert_component',[LoopsController::class,'alertController']);
 
 //Helper
 Route ::get('/array-helper',[UserController::class,'arrayHelpers']);
+
+//String Helper
+Route ::get('/string-helper',[UserController::class,'stringHelpers']);
+Route ::get('/string-fluent',[UserController::class,'fluentStringHelpers']);

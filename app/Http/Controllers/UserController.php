@@ -8,6 +8,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Http;
 
 
 class UserController extends Controller
@@ -103,5 +104,12 @@ class UserController extends Controller
 
         $respone = json_decode($respone,true);
         return $respone;
+    }
+
+
+    function httpClient()
+    {
+        $response = Http::get('https://reqres.in/api/users');
+        return $response;
     }
 }

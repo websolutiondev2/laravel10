@@ -57,4 +57,4 @@ Route ::get('/string-fluent',[UserController::class,'fluentStringHelpers']);
 Route ::get('/url-helper',[UserController::class,'urlHelpers']);
 
 // HTTP Client
-Route ::get('/http-client',[UserController::class,'httpclientCurl']);
+Route ::get('/http-client',[UserController::class,'httpClient']);

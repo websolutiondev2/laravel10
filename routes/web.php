@@ -42,7 +42,9 @@ Route::get('/loopdemo',[LoopsController::class,'loop_demo']);
 Route::get('/demo', function () {
     return view('demo');
     });
-
+    Route::get('/sample', function () {
+        return view('sample');
+        });
 // Component
 Route ::get('/alert_component',[LoopsController::class,'alertController']);
 
@@ -53,3 +55,6 @@ Route ::get('/array-helper',[UserController::class,'arrayHelpers']);
 Route ::get('/string-helper',[UserController::class,'stringHelpers']);
 Route ::get('/string-fluent',[UserController::class,'fluentStringHelpers']);
 Route ::get('/url-helper',[UserController::class,'urlHelpers']);
+
+// HTTP Client
+Route ::get('/http-client',[UserController::class,'httpclientCurl']);

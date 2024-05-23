@@ -68,9 +68,40 @@ class UserController extends Controller
         echo $str;
     }
 
-    function urlHelpers()
+     function urlhelpers()
     {
-        $action = action(UserController::class. '@fluentStringHelpers');
-        return $action;
+
+        $action = action([UserController::class,'fluentStringHelpers']);
+        print_r($action);
+
+        
+    }
+
+    function httpclientCurl()
+    {
+        $curl = curl_init();
+        curl_setopt_array($curl,[
+            CURLOPT_URL => 'https://reqres.in/api/users',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 1000,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+            
+        ]);
+        $respone = curl_exec($curl);
+        $err = curl_error($curl);
+        curl_close($curl);
+        if($err)
+        {
+            return ["error"=>true , "msg"=>$err];
+
+        }
+
+        $respone = json_decode($respone,true);
+        return $respone;
     }
 }

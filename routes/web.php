@@ -45,6 +45,7 @@ Route::get('/demo', function () {
     Route::get('/sample', function () {
         return view('sample');
         });
+        
 // Component
 Route ::get('/alert_component',[LoopsController::class,'alertController']);
 
@@ -58,3 +59,9 @@ Route ::get('/url-helper',[UserController::class,'urlHelpers']);
 
 // HTTP Client
 Route ::get('/http-client',[UserController::class,'httpClient']);
+
+Route::View('login','sample');
+Route ::post('/login-method',[UserController::class,'loginmethod']);
+
+// Working On Session
+Route ::get('/session-method',[UserController::class,'sessionmethod']);

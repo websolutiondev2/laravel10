@@ -109,7 +109,51 @@ class UserController extends Controller
 
     function httpClient()
     {
+
         $response = Http::get('https://reqres.in/api/users');
-        return $response;
+                // $statusCode = $response->status();
+                // $headers = $response->headers();
+                $body = $response->body();
+                // $json = $response->json();
+                // dd($json);
+
+        // return $response;
+
+        // return Count($response);
+        if ($response->successful()) {
+            $users = $response->json();
+    
+            foreach ($users['data'] as $user) {
+
+                echo "Name: {$user['first_name']} - Email: {$user['email']}". PHP_EOL;
+
+            }
+        } else {
+            echo "Error: {$response->status()} - {$response->reasonPhrase()}". PHP_EOL;
+        }
+        
+    }
+
+    function loginmethod(Request $request)
+    {
+        $requestData = $request->all();
+        echo '<pre>';
+        print_r($requestData);
+    }   
+
+    public function sessionmethod(Request $request)
+    {
+        // Store data in Session
+        $request->session()->put('Course', 'Laravel');
+        // global Helper
+        session(['course_using_global_helper'=>'advanced PHP']);
+
+        // Retrive session data
+        // Retrive data with specific key
+        $course = $request->session()->get('course_using_global_helper');               
+        echo "Course: $course <br>";
+
+        $data = session('Course');
+        echo  $data ."<br>";
     }
 }

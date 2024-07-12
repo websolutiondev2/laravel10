@@ -139,6 +139,8 @@ class UserController extends Controller
         $requestData = $request->all();
         echo '<pre>';
         print_r($requestData);
+        echo 'working';
+        
     }   
 
     public function sessionmethod(Request $request)
@@ -149,11 +151,16 @@ class UserController extends Controller
         session(['course_using_global_helper'=>'advanced PHP']);
 
         // Retrive session data
-        // Retrive data with specific key
-        $course = $request->session()->get('course_using_global_helper');               
+        // Retrive data with specific key using key instance
+        $course = $request->session()->get('course_using_global_helper1','no data found');               
         echo "Course: $course <br>";
-
-        $data = session('Course');
+        // Retrive data with specific key using global helper
+        $data = session('Course','No data found!');
         echo  $data ."<br>";
+        // Retrive all session data
+        $allData = $request->session()->all();
+        echo "<pre>";
+        print_r($allData);
     }
+    
 }

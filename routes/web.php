@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth;
 use App\Http\Controllers\LoopsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Form;
+use App\Http\Controllers\Temp;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,3 +85,5 @@ Route::get('/temp', function()
    return View::make('pages.home');
 
 });
+Route::get('/temp1', [Temp::class, 'showTemp']);
+

@@ -15,6 +15,7 @@ class User
      */
     public function handle(Request $request, Closure $next): Response
     {
+        
         $country =[
             'India','USA','Canada','Russia'
         ];
@@ -25,5 +26,6 @@ class User
         }
 
         return $next($request);
+
     }
 }

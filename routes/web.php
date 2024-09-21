@@ -39,7 +39,7 @@ Route::get('/exit-view',[Auth::class,'viewexist']);
 //Passing Data
 Route::get('/name_array',[Auth::class,'nameArray']);
 Route::get('/compact_function',[Auth::class,'compactFunction']);
-Route::get('/with_function/{id}',[Auth::class,'withfunction']);
+Route::get('/with_function/{id}/{ide}',[Auth::class,'withfunction']);
 
 //Looping Controller Routes
 Route::get('/loopdemo',[LoopsController::class,'loop_demo']);
@@ -86,4 +86,3 @@ Route::get('/temp', function()
 
 });
 Route::get('/temp1', [Temp::class, 'showTemp']);
-

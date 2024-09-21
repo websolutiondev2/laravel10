@@ -62,11 +62,14 @@ class Auth extends Controller
         }
     }
 
-    public function withfunction($id)
+    public function withfunction($id,$d)
     {
           if(View::exists('passing_data.with_function'))
         {
-            return view('passing_data.with_function')->with('id',$id);
+            return view('passing_data.with_function')->with([
+            'id' => $id,
+            'ide' => $d,
+        ]);
         }
         
         else{

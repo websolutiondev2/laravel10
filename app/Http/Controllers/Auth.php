@@ -71,7 +71,7 @@ class Auth extends Controller
             'ide' => $d,
         ]);
         }
-        
+
         else{
             return "View is Unavailable";
         }

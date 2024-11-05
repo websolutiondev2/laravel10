@@ -7,6 +7,7 @@ use App\Http\Controllers\LoopsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Form;
 use App\Http\Controllers\Temp;
+use App\Http\Controllers\RegisterUser;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,3 +87,14 @@ Route::get('/temp', function()
 
 });
 Route::get('/temp1', [Temp::class, 'showTemp']);
+
+// Registration
+Route::View('/register','auth/register');
+
+// CRUD OPERATION
+// Route::View('/user','user');
+Route::get('/register_user',[RegisterUser::class,'index']);
+Route::post('/addcontact',[RegisterUser::class,'add']);
+Route::get('/edit/{id}',[RegisterUser::class,'edit']);
+Route::post('edit/{id}',[RegisterUser::class,'update']);
+Route::get('delete/{id}',[RegisterUser::class,'delete']);
